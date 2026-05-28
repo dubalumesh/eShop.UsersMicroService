@@ -13,8 +13,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["UsersMicroService.API/UsersMicroService.API.csproj", "UsersMicroService.API/"]
-COPY ["./UsersMicroService.Core/UsersMicroService.Core.csproj", "UsersMicroService.Core/"]
-COPY ["./UsersMicroService.Infrastructure/UsersMicroService.Infrastructure.csproj", "UsersMicroService.Infrastructure/"]
+COPY ["UserMicroService.Core/UsersMicroService.Core.csproj", "UsersMicroService.Core/"]
+COPY ["UsersMicroService.Infrastructure/UsersMicroService.Infrastructure.csproj", "UsersMicroService.Infrastructure/"]
 
 RUN dotnet restore "./UsersMicroService.API/UsersMicroService.API.csproj"
 COPY . .
